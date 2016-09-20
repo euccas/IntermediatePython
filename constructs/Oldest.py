@@ -22,8 +22,7 @@ def get_oldest2(date1, date2):
     date1_list = date1.split('/')
     print(date1_list[-1])
     print(date1_list[:2])
-    date1_a = []
-    date1_a = date1_list[-1] + date1_list[:2]
+    date1_a = [date1_list[-1]] + date1_list[:2]
     print(date1_a)
 
 print(get_oldest('01/27/1832', '01/27/1756'))
