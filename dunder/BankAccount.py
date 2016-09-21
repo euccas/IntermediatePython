@@ -15,6 +15,15 @@
 #
 # Hint:
 #   Use __bool__ method
+#
+# >>> account1 = BankAccount(balance=100)
+# >>> account2 = BankAccount(balance=200)
+# >>> account1 == account2
+# False
+# >>> account1 < account2
+# True
+# >>> account1 >= account2
+# False
 
 class BankAccount:
 
@@ -29,3 +38,18 @@ class BankAccount:
 
     def __bool__(self):
         return self.balance > 0
+
+    def __lt__(self, other):
+        return self.balance < other.balance
+
+    def __le__(self, other):
+        return self.balance <= other.balance
+
+    def __gt__(self, other):
+        return self.balance > other.balance
+
+    def __ge__(self, other):
+        return self.balance >= other.balance
+
+    def __eq__(self, other):
+        return self.balance == other.balance
