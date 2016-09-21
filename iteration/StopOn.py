@@ -11,7 +11,7 @@ def stop_on(numbers, value):
         else:
             yield n
 
-list(stop_on([1,2,3],3))
-next(stop_on([1,2,3],3))
-next(stop_on([1,2,3],3), 0)
+# list(stop_on([1,2,3],3))
+# next(stop_on([1,2,3],3))
+# next(stop_on([1,2,3],3), 0)
 
