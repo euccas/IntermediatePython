@@ -1,3 +1,15 @@
+# Is Callable
+#
+# Implement a function, accept any object
+#
+# Example:
+# >>> is_callable(sorted)
+# True
+# >>> is_callable(str)
+# True
+# >>> is_callable(4)
+# False
+
 def is_callable(obj):
 
     try:
@@ -8,11 +20,4 @@ def is_callable(obj):
         return False
     else:
         return True
-
-# >>> is_callable(sorted)
-# True
-# >>> is_callable(str)
-# True
-# >>> is_callable(4)
-# False
 
