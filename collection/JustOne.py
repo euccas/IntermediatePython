@@ -10,11 +10,11 @@ class JustOne:
     def __len__(self):
         return 1
 
-    def __iter__(self):
-        return iter([1])
-
     #def __iter__(self):
-    #    yield 1
+    #    return iter([1])
+
+    def __iter__(self):
+       yield 1
 
     def __next__(self):
     # optional
