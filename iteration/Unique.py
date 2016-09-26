@@ -34,7 +34,7 @@ def unique2(iterable):
         if not i in record:
             record.append(i)
             yield i
-            
+
 print(list(unique2([6, 7, 0, 9, 0, 1, 7])))
 print(list(unique2([])))
 print(''.join(unique2("hello there")))
