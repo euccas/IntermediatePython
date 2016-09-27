@@ -18,22 +18,22 @@
 #             i_next = None
 #         yield(i, i_next)
 
-# def pairwise(iterable):
-#     while True:
-#         i = iter(iterable)
-#         try:
-#             curr = next(i)
-#             cnext = next(i)
-#             yield(curr, cnext)
-#         except StopIteration:
-#             yield(curr, None)
-
 def pairwise(iterable):
-    for i in range(len(iterable)):
+    i = iter(iterable)
+    while True:
         try:
-            yield(iterable[i], iterable[i+1])
-        except IndexError:
-            yield(iterable[i], None)
+            curr = next(i)
+            cnext = next(i)
+            yield(curr, cnext)
+        except StopIteration:
+            yield(curr, None)
+
+# def pairwise(iterable):
+#     for i in range(len(iterable)):
+#         try:
+#             yield(iterable[i], iterable[i+1])
+#         except IndexError:
+#             yield(iterable[i], None)
 
 print(list(pairwise([1,2,3])))
 print(list(pairwise("hey")))

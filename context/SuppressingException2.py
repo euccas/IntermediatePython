@@ -1,13 +1,4 @@
-class suppress:
-    def __init__(self, exception_type):
-        self.exception_type = exception_type
+from contextlib import suppress
 
-    def __enter__(self):
-        pass
-
-    def __exit__(self, exception_type, exception, traceback):
-        print(exception_type, )
-        if issubclass(exception_type, self.exception_type):
-            return True
 
 

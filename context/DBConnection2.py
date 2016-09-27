@@ -1,5 +1,7 @@
 from contextlib import contextmanager
 
+## When using contextmanager, the class does not need have __exit__ and __enter__ methods.
+
 @contextmanager
 def nothing():
     print("entering block")
@@ -27,10 +29,6 @@ class DBConnection:
     def close(self):
         print("Disconnecting from database {}".format(self.name))
 
-    def __enter__(self):
-        self.open()
-        return self
-
-    def __exit__(self, *args, **kwargs):
-        import pdb; pdb.set_trace()
-        self.close()
+if __name__ == "__main__":
+    with open_db("Trey") as db:
+        print(db.name)

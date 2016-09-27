@@ -26,3 +26,8 @@ def cmp(a, b):
         return 1
 
 print(topKFrequentWords(["abc", "abc", "hello"], 1))
+
+# (1,2) (2,2)
+# (1,2) (1,1)
+
+# Python 3: use key function to replace cmp
