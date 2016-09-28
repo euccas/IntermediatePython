@@ -7,3 +7,4 @@ else:
     sides = 6
 
 print(random.randint(1, sides))
+print(random.randrange(1, sides))
