@@ -42,3 +42,24 @@ print(list(deep_flatten(["hello", [1,2], 3, 4])))
 
 #print(list(deep_flatten2([0, [1, [2, 3]], [4]])))
 #print(list(deep_flatten2(["hello", [1,2], 3, 4])))
+
+## Reference Solutions
+## Notes: try except should be around the loop
+
+def flatten(iterable):
+    try:
+        for item in iterable:
+            yield from flatten(item)
+    except TypeError:
+        yield iterable
+
+def flatten2(iterable):
+    try:
+        for item in iterable:
+            if isinstance(item, (str, bytes)):
+                yield item
+            else:
+                yield from flatten2(item)
+    except TypeError:
+        yield iterable
+

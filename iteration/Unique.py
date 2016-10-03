@@ -39,4 +39,11 @@ print(list(unique2([6, 7, 0, 9, 0, 1, 7])))
 print(list(unique2([])))
 print(''.join(unique2("hello there")))
 
+# Unique3 has the same function as unique2, and with code refactoring
+def unique3(elements):
+    seen_items = set()
+    for item in elements:
+        if item not in seen_items:
+            yield item
+            seen_items.add(item)
 

@@ -20,13 +20,15 @@
 
 def pairwise(iterable):
     i = iter(iterable)
-    while True:
+    stop = False
+    while not stop:
+        curr = next(i)
         try:
-            curr = next(i)
             cnext = next(i)
-            yield(curr, cnext)
         except StopIteration:
-            yield(curr, None)
+            cnext = None
+            stop = True
+        yield(curr, cnext)
 
 # def pairwise(iterable):
 #     for i in range(len(iterable)):
@@ -38,3 +40,21 @@ def pairwise(iterable):
 print(list(pairwise([1,2,3])))
 print(list(pairwise("hey")))
 print(list(pairwise([])))
+
+def pairwise2(elements):
+    previous, current = None, None
+    for current in elements:
+        if previous:
+            yield previous, current
+        previous = current
+    if current:
+        yield current, None
+
+# Another solution which only works on sequences
+def pairwise3(elements):
+    for i, item in enumerate(elements):
+        if i < len(elements) - 1:
+            next_item = elements[i+1]
+        else:
+            next_item = None
+        yield item, next_item
