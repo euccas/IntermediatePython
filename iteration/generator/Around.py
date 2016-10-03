@@ -10,6 +10,7 @@
 # >>> list(around("hey"))
 # [(None, 'h', 'e'), ('h', 'e', 'y'), ('e', 'y', None)]
 
+# Solution around only works on sequences
 def around(iterable):
     for i in range(len(iterable)):
         try:
@@ -22,6 +23,16 @@ def around(iterable):
                 yield((None, iterable[i], None))
              else:
                 yield((iterable[i-1], iterable[i], None))
+
+# This is the ideal solution
+def around2(elements):
+    previous, current = None, None
+    for next_item in elements:
+        if current:
+            yield previous, current, next_item
+        previous, current = current, next_item
+    if current:
+        yield previous, current, None
 
 print(list(around([1,2,3,4])))
 print(list(around([])))
