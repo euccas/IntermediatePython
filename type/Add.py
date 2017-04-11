@@ -3,7 +3,7 @@
 ## and prints out the sum of these numbers
 
 def add(a, b):
-    return a + b
+    return '{:.1f}'.format(a + b)
 
 print(add(3, 5.2))
 print(add(-7, 2))
